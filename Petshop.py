@@ -48,8 +48,23 @@ def grooming_anjing():
     choice = input("Masukkan pilihan grooming anjing (1-6):")
     return  choice
 
-def print_nota():
-    
+def print_nota(reservasi):
+  groomings = ["nanti masukin list grooming"]
+  total_harga = 0
+  print("\n--- Nota Reservasi Grooming ---")
+  for idx, data in enumerate(reservasi):
+    print("Reservasi", idx + 1)
+    print("Nama Pemilik:", data["nama_pemilik"])
+    print("Nomor Pemilik:", data["nomor_pemilik"])
+    print("Alamat Pemilik:", data["alamat_pemilik"])
+    print("Nama Hewan:", data["nama_hewan"])
+    print("Kondisi Hewan:", data["kondisi_hewan"])
+    print("Pilihan Grooming:", groomings[int(data["pilihan_grooming"])-1])
+    harga = calculate_price(data["pilihan_grooming"], data["jenis_hewan"])
+    print("Harga:", harga)
+    total_harga += harga
+  print("Total Harga: Rp", total_harga)
+  print("---------------------------------")
 
     # if (pilihan ==1 ):
     #     grooming_anjing
