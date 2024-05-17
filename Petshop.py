@@ -3,8 +3,8 @@ nama_pemilik = input("Masukkan nama pemilik hewan: ")
 nama_hewan = input("Masukkan nama hewan: ")
 kondisi_hewan = input("Masukkan kondisi hewan: ")
 
-# Daftar makanan dan minuman
-daftar_makanan = """
+# jenis hewan
+jenis_hewan = """
 |==============================================|
 |              Pilih Jenis Hewan               |
 |==============================================|
@@ -13,80 +13,46 @@ daftar_makanan = """
 |==============================================|
 """
 
-daftar_minuman = """
-|===============================|
-|         Pilih Grooming        |
-|===============================|
-| 1. Hot Chocolate  Rp 30.000   |
-| 2. Frappuccino    Rp 40.000   |
-| 3. Macchiato      Rp 25.000   |
-| 4. Latte          Rp 30.000   |
-| 5. Matcha Latte   Rp 24.000   |
-|===============================|
-"""
-
 # Menampilkan daftar makanan dan minuman
 print("|==============================================|")
 print("|              Pet Shop Lovely hart            |")
 print("|==============================================|")
-print(daftar_makanan)
-print(daftar_minuman)
+print(jenis_hewan)
 
-# Inisialisasi total_makanan sebelum loop
-total_makanan = 0
 
-# Inisialisasi total_minum sebelum loop
-total_minum = 0
+def grooming_cat():
+    print("|=======================================================|")
+    print("|             Pilihan grooming untuk kucing             |")
+    print("|=======================================================|")
+    print("|1. Grooming kering                      Rp.20.000      |")
+    print("|2. Grooming basic                       Rp.25.000      |")
+    print("|3. Grooming shampoo Anti kutu           Rp.30.000      |")
+    print("|4. Grooming shampoo Anti jamur          Rp.30.000      |")
+    print("|5. Grooming shampoo anti kutu & jamur   Rp.60.000      |")
+    print("|6. Grooming shampoo whitening           Rp.80.000      |")
+    print("|=======================================================|")
+    choice = input("Masukkan pilihan grooming kucing (1-6):")
+    return  choice
 
-# List untuk menyimpan pesanan makanan dan minuman
+def grooming_anjing():
+    print("|=======================================================|")
+    print("|        Pilihan grooming untuk anjing                  |")
+    print("|=======================================================|")
+    print("|1. Grooming kering                      Rp.40.000      |")
+    print("|2. Grooming basic                       Rp.50.000      |")
+    print("|3. Grooming shampoo Anti kutu           Rp.60.000      |")
+    print("|4. Grooming shampoo Anti jamur          Rp.70.000      |")
+    print("|5. Grooming shampoo anti kutu & jamur   Rp.80.000      |")
+    print("|6. Grooming shampoo whitening           Rp.100.000     |")
+    print("|=======================================================|")
+    choice = input("Masukkan pilihan grooming anjing (1-6):")
+    return  choice
 
-pesanan_makanan = []
-pesanan_minuman = []
+def print_nota():
+    
 
-# Loop untuk meminta pesanan makanan
-while True:
-    menu_makanan = int(input("Pilih Menu (1-6) atau masukkan 0 jika sudah selesai memilih makanan: "))
-    if menu_makanan == 0:
-        break
-
-    jumlah_porsi = int(input("Berapa Porsi: "))
-
-    if 1 <= menu_makanan <= 6:
-        harga = [25000, 25000, 30000, 35000, 30000, 40000][menu_makanan - 1]
-        nama_makanan = ["Nasi Goreng", "Mie Goreng Jawa", "Rice Bowl Chicken Teriyaki", "Rice Bowl Beef Bulgogi", "Rice Bowl Chicken Katsu Curry", "Pasta Aglio Olio"][menu_makanan - 1]
-        total_makanan += harga * jumlah_porsi
-        pesanan_makanan.append((nama_makanan, jumlah_porsi, harga * jumlah_porsi))
-    else:
-        print("Pilihan tidak valid.")
-
-# Loop untuk meminta pesanan minuman
-while True:
-    menu_minuman = int(input("Pilih Menu (1-5) atau masukkan 0 jika sudah selesai memilih minuman: "))
-    if menu_minuman == 0:
-        break
-
-    jumlah_gelas = int(input("Berapa Gelas: "))
-
-    if 1 <= menu_minuman <= 5:
-        harga_minuman = [30000, 40000, 25000, 30000, 24000][menu_minuman - 1]
-        nama_minuman = ["Hot Chocolate", "Frappuccino", "Macchiato", "Latte", "Matcha Latte"][menu_minuman - 1]
-        total_minum += harga_minuman * jumlah_gelas
-        pesanan_minuman.append((nama_minuman, jumlah_gelas, harga_minuman * jumlah_gelas))
-    else:
-        print("Pilihan tidak valid.")
-
-# Cetak Struk Pembelian
-print("\n|=====================================|")
-print("|        Struk Pembelian        |")
-print("|=======================================|")
-print("|           Makanan             |")
-print("|=======================================|")
-for makanan in pesanan_makanan:
-    print(f"|{makanan[0]:<30} {makanan[1]:<10} {makanan[2]:>10}|")
-print("|           Minuman             |")
-print("|===============================|")
-for minuman in pesanan_minuman:
-    print(f"|{minuman[0]:<30} {minuman[1]:<10} {minuman[2]:>10}|")
-print("|===============================|")
-print(f"| Total                      {total_makanan + total_minum:>20} |")
-print("|===============================|")
+    # if (pilihan ==1 ):
+    #     grooming_anjing
+    #     anjing = int(input("pilih grooming anjing"))
+    #     if (anjing == 1):
+    #         25000 * 1
