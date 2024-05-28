@@ -85,3 +85,22 @@ if hewan == 1:
             treatment_anjing.append((treatment, harga))
         else:
             print("Pilihan tidak valid")
+
+
+if hewan == 2:
+# List untuk menyimpan treatment kucing 
+    treatment_kucing = []
+
+# Percabangan pilihan kucing
+while True:
+    hewan_kucing = int(input("Pilih treatment [1/6] atau pilih 0 jika sudah memilih: " ))
+    if hewan_kucing == 0:
+            break
+    
+    if 1 <= hewan_kucing <= 6:
+        harga = [20000, 25000, 30000, 30000, 60000, 80000]
+        treatment = ["Grooming kering'", "Grooming basic", "Grooming shampo Anti kutu", "Grooming shampoo Anti jamur", "Grooming Shampoo anti kutu & jamur", "Grooming shampoo whitehing"]
+        treatment_kucing.append((treatment, harga))
+
+else:
+    print("Pilihan tidak valid")
