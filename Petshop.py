@@ -17,6 +17,7 @@ total_treatment_cat = 0
 anjing = []
 kucing = []
 
+# parameter jenis hewan yg diinput sama user
 def grooming_cat():
     print("|=======================================================|")
     print("|             Pilihan grooming untuk kucing             |")
@@ -67,12 +68,13 @@ def print_nota():
     print(f"Total Biaya  : Rp {total_harga}")
     print("-------------------------------------------------")
     
-# Percabangan pilihan anjing
+# Percabangan pilihan jenis hewan
 while True:
     print(jenis_hewan)
     hewan = int(input("Masukkan jenis hewan 1 atau 2 ( 0 untuk selesai): "))
     
     if hewan == 0:
+            # diinput setelah costumer selesai input jenis hewan, banyak hewan, dan treatment yang dipilih.
             print("===== Masukkan Data Reservasi =====")
             nama_pemilik = input("Masukkan nama pemilik hewan: ")
             no_pemilik =  input("Masukkan no telepon: ")
@@ -87,6 +89,7 @@ while True:
             nama_hewan = input("Masukan nama anjing: ")
             
             if 1 <= pilihan_treatment <= 6:
+                # menggunakan array untuk daftar harga dan menunya, abis itu kalau dipilih maka arraynya akan -1
                 harga = [40000, 50000, 60000, 70000, 80000, 100000][pilihan_treatment - 1]
                 treatment = ["Grooming kering", "Grooming basic", "Grooming shampoo Anti kutu", 
                                 "Grooming shampoo Anti jamur", "Grooming Shampoo Anti kutu & jamur", 
