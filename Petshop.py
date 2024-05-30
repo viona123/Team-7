@@ -68,7 +68,7 @@ def print_nota():
     print(f"Total Biaya  : Rp {total_harga}")
     print("-------------------------------------------------")
     
-# Percabangan pilihan jenis hewan
+# menampilkan perulangan pilihan jenis hewan
 while True:
     print(jenis_hewan)
     hewan = int(input("Masukkan jenis hewan 1 atau 2 ( 0 untuk selesai): "))
